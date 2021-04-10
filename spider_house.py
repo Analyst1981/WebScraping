@@ -1,13 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-"""
-@version: ??
-@author:Analyst1981
-@contact: Analyst1981@mail.com
-@file: spider_maoyan.py
-@time: 21/4/3
-"""
+
 from typing import Text
 from lxml import etree
 from bs4 import BeautifulSoup
@@ -20,6 +14,8 @@ import re
 import datetime
 import pandas as pd
 import csv
+import random
+
 
 #函数功能：获取加密后真正访问地址
 def geturl(base_url):
@@ -113,7 +109,12 @@ def save_csv(house_info_list, fname):
 #函数功能：地理编码
 
 def dlbm(fname):
+
     AK = "自己的密钥"
+    USER_AGENTS = [
+    "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; AcooBrowser; .NET CLR 1.1.4322; .NET CLR 2.0.50727)",
+    "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; Acoo Browser; SLCC1; .NET CLR 2.0.50727; Media Center PC 5.0; .NET CLR 3.0.04506)",]
+    
     linelist = []
     loc_dict = {}
     with open(fname, "r", encoding="gbk") as f:

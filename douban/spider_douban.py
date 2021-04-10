@@ -5,7 +5,7 @@
 @version: ??
 @author:Analyst1981
 @contact: Analyst1981@mail.com
-@file: spider_maoyan.py
+@file: spider_douban.py
 @time: 21/4/3
 """
 from typing import Text
